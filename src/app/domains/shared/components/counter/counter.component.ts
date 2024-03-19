@@ -26,6 +26,11 @@ export class CounterComponent {
     console.log('ngOnChanges');
     console.log('-'.repeat(10));
     console.log(changes);
+    const duration = changes['duration'];
+    console.log(duration);
+    if (duration && duration.currentValue !== duration.previousValue) {
+      this.doSomething();
+    }
   }
   
   ngOnInit() {
@@ -50,5 +55,10 @@ export class CounterComponent {
     // Cuando el componente se recupera luego de ser destruido se vuelve a correr todo el ciclo desde el constructor
     console.log('ngOnDestroy');
     console.log('-'.repeat(10));
+  }
+
+  doSomething() {
+    console.log('change duration');
+    // Aqui podrian ir procesos async
   }
 }
