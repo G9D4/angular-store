@@ -17,4 +17,8 @@ export class HeaderComponent {
   toggleSideMenu() {
     this.hideSideMenu.update(prevState => !prevState);
   };
+
+  getTotal() {
+    return this.cart.reduce((accumulator, product) => accumulator + product.price, 0);
+  };
 }
