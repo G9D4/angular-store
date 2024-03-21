@@ -58,15 +58,15 @@
     <div class="border-dashed border-t-2 py-3 mt-3 gap-2 flex flex-col">
         <div class="flex flex-row font-medium justify-between">
             <p>Subtotal</p>
-            <p>S/. {{ getTotal() }}</p>
+            <p>S/. {{ getTotal().toFixed(2) }}</p>
         </div>
         <div class="flex flex-row font-medium justify-between">
             <p class="">Entrega</p>
-            <p>S/. 10.00</p>
+            <p>S/. {{ deliveryPrice().toFixed(2) }}</p>
         </div>
         <div class="flex flex-row font-bold justify-between pt-3">
             <p>Total</p>
-            <p>S/. {{ getTotal()  + 10 }}</p>
+            <p>S/. {{ (getTotal()  + deliveryPrice()).toFixed(2) }}</p>
         </div>
     </div>
 </div>

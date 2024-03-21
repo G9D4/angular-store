@@ -11,6 +11,7 @@ import { Product } from '../../models/product.model';
 })
 export class HeaderComponent {
   hideSideMenu = signal(true);
+  deliveryPrice = signal(10);
 
   @Input({required: true}) cart: Product[] = [];
 
