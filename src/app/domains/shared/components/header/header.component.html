@@ -66,6 +66,7 @@
         </div>
         <div class="flex flex-row font-bold justify-between pt-3">
             <p>Total</p>
+            <!-- Es malo para el rendimiento usar funciones dentro del string interpotalion, se prefiere que sean signals -->
             <p>S/. {{ total() }}</p>
         </div>
     </div>
