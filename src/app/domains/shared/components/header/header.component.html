@@ -51,23 +51,23 @@
             </div>
             <div class="flex flex-col">
                 <p class="text-sm text-gray-600">Cantidad: 1</p>
-                <p class="flex justify-end">S/. {{ product.price }}</p>
+                <p class="flex justify-end">{{ product.price | currency: 'S/. ' : 'symbol' : '1.2' }}</p>
             </div>
         </div>
     </div>
     <div class="border-dashed border-t-2 py-3 mt-3 gap-2 flex flex-col">
         <div class="flex flex-row font-medium justify-between">
             <p>Subtotal</p>
-            <p>S/. {{ subtotal() }}</p>
+            <p>{{ subtotal() | currency: 'S/. ' : 'symbol' : '1.2' }}</p>
         </div>
         <div class="flex flex-row font-medium justify-between">
             <p class="">Entrega</p>
-            <p>S/. {{ deliveryPrice() }}</p>
+            <p>{{ deliveryPrice() | currency: 'S/. ' : 'symbol' : '1.2' }}</p>
         </div>
         <div class="flex flex-row font-bold justify-between pt-3">
             <p>Total</p>
             <!-- Es malo para el rendimiento usar funciones dentro del string interpotalion, se prefiere que sean signals -->
-            <p>S/. {{ total() }}</p>
+            <p>{{ total() | currency: 'S/. ' : 'symbol' : '1.2' }}</p>
         </div>
     </div>
 </div>
