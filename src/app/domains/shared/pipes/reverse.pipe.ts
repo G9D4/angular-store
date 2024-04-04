@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// Los pipes se usan para transformacion
 @Pipe({
   name: 'reverse',
   standalone: true
