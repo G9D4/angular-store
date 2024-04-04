@@ -1,12 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../shared/models/product.model';
+import { ReversePipe } from '@shared/pipes/reverse.pipe'
+import { TimeAgoPipe } from '@shared/pipes/time-ago.pipe'
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReversePipe, TimeAgoPipe],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrl: './product.component.css',
 })
 export class ProductComponent {
   @Input({ required: true }) product!: Product;
@@ -16,5 +18,6 @@ export class ProductComponent {
   addToCartHandler() {
     console.log('click from child');
     this.addToCart.emit(this.product);
+    console.log(typeof this.product.creationAt)
   }
 }
